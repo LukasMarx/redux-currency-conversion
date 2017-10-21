@@ -1,5 +1,4 @@
 import { Currency } from './../models/currency';
-import { combineReducers, ActionReducer } from '@ngrx/store';
 
 import * as fromAmount from './amount';
 import * as fromCurrency from './currency';

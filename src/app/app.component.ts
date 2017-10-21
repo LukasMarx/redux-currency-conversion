@@ -20,20 +20,15 @@ export class AppComponent implements OnInit {
     constructor(public store: Store<fromRoot.State>) {
         this.amount$ = store.select(fromRoot.getAmountState);
         this.currencyRates$ = store.select(fromRoot.getCurrnecyRates);
-        this.currencyRates$.subscribe(data => {
-            console.log(data);
-        });
     }
 
+    // Dispatch the Action
     ngOnInit() {
         this.store.dispatch(new CurrenciesUpdateAction());
     }
 
     onAmountChange(amount: string) {
-        try {
-            const number = parseFloat(amount);
-            if (!isNaN(number))
-                this.store.dispatch(new AmountChangeAction(number));
-        } catch (error) {}
+        const number = parseFloat(amount);
+        if (!isNaN(number)) this.store.dispatch(new AmountChangeAction(number));
     }
 }
