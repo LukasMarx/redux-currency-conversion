@@ -1,2 +1,19 @@
-<input [ngModel]='amount$ | async' (ngModelChange)="onAmountChange($event)">
-<p *ngFor="let currency of (currencyRates$ | async)">{{currency.code + ' ' + currency.value * (amount$ | async)}}</p>
+<div class="wrapper">
+  <img class="image" src="./../assets/undraw_transfer_money_rywa.svg" />
+
+  <div>
+    <input
+      [ngModel]="amount$ | async"
+      (ngModelChange)="onAmountChange($event)"
+    />
+    $
+  </div>
+  <div class="rates">
+    <div *ngFor="let currency of (currencyRates$ | async)" class="conversion">
+      <p class="noMargin code">{{ currency.code }}</p>
+      <p class="noMargin value">
+        {{ (currency.value * (amount$ | async)).toFixed(2) }}
+      </p>
+    </div>
+  </div>
+</div>
