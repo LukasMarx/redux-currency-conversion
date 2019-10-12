@@ -1,5 +1,5 @@
 ![image](https://malcoded.com/api/v1/48238e83-87dd-4b4f-be48-26ea7c89e8e7/asset/redux.png)
-# Learn Redux in Angular with NgRx Store (version 4)
+# Learn Redux in Angular with NgRx Store
 You will probably agree with me, that angular applications can become quite hard to overlook as they become bigger. Information is passed from parent-components to child-components, @Output goes into @Input, and at the end of the day, nobody knows where the malformed result comes from. 
 
 But it doesn't have to be like this. The solution to the problem is called Redux and it's angular implementation ngrx& ngrx store.
